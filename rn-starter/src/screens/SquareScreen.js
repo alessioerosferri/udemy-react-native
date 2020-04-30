@@ -5,15 +5,13 @@ import ColourCounter from "../components/ColourCounter";
 const ADJUSTER = 15;
 
 const reducer = (state, action) => {
-  switch (action.colorToChange) {
-    case "red":
-      return {...state, red: state.red + action.amount};
-    case "green":
-      return {...state, green: state.green + action.amount};
-    case "blue":
-      return {...state, blue: state.blue + action.amount};
-    default:
-      return state;
+  if (state.hasOwnProperty(action.colorToChange)) {
+    if (state[action.colorToChange] + action.amount <= 255 && state[action.colorToChange] + action.amount >= 0) {
+      return {...state, [action.colorToChange]: state[action.colorToChange] + action.amount};
+    }
+    return state;
+  } else {
+    return state;
   }
 };
 
