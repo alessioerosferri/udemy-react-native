@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "black",
     height: 200,
-    justifyContent: "center"
+    justifyContent: "space-between"
   },
   textStyle: {
     borderWidth: 3,
