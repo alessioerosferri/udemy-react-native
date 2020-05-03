@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
   textTwoStyle: {
     borderWidth: 3,
     borderColor: "red",
-    alignSelf: "stretch"
+    position: "absolute",
+    fontSize: 18
   },
   textThreeStyle: {
     borderWidth: 3,
