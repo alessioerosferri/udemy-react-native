@@ -21,7 +21,9 @@ const styles = StyleSheet.create({
   viewStyle: {
     borderWidth: 1,
     borderColor: "black",
-    flexDirection: "row"
+    flexDirection: "row",
+    alignItems: "center",
+    height: 200
   },
   textStyle: {
     borderWidth: 3,
