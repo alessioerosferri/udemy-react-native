@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
   },
   textThreeStyle: {
     borderWidth: 3,
+    flex: 3,
     borderColor: "red"
   }
 });
