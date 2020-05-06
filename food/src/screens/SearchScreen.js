@@ -1,7 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {View, Text, StyleSheet} from "react-native";
 import SearchBar from "../components/SearchBar";
 import yelp from "../apis/yelp";
+
+const DEFAULT_TERM = "pasta";
 
 const SearchScreen = () => {
   const [term, setTerm] = useState("");
@@ -23,6 +25,10 @@ const SearchScreen = () => {
       setErrorMessage("Something went wrong");
     }
   }
+
+  useEffect(() => {
+    searchApi(DEFAULT_TERM)
+  }, []);
 
   return (
     <View>
