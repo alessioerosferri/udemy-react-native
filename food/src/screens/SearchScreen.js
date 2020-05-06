@@ -18,6 +18,7 @@ const SearchScreen = () => {
         }
       });
       setResults(response.data.businesses);
+      setErrorMessage("");
     } catch (e) {
       setErrorMessage("Something went wrong");
     }
