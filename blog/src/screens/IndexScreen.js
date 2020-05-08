@@ -8,7 +8,14 @@ const IndexScreen = ({navigation}) => {
   const {state, deleteBlogPost, getBlogPosts} = useContext(Context);
 
   useEffect(() => {
-    getBlogPosts()
+    getBlogPosts();
+    const listener = navigation.addListener("didFocus", () => {
+      getBlogPosts();
+    });
+
+    return () => { //this is called by react when component is unmounted
+      listener.remove();
+    }
   }, []);
 
   return (
