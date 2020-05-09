@@ -1,9 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
+app.use(bodyParser.json());
 app.use(authRoutes);
 
 const mongoUri = "mongodb+srv://admin:admin@cluster0-iq8l6.mongodb.net/test?retryWrites=true&w=majority"
