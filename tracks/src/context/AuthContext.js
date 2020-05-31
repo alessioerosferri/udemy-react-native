@@ -15,8 +15,12 @@ const signin = dispatch => ({email, password}) => {
 
 }
 
+const signout = dispatch => () => {
+
+}
+
 export const {Provider, Context} = createDataContext(
   authReducer,
-  {signup, signin},
+  {signup, signin, signout},
   {isSignedIn: false}
 )
