@@ -1,3 +1,4 @@
+import {AsyncStorage} from "react-native";
 import createDataContext from "./createDataContext";
 import trackerAPI from "../api/tracker";
 
@@ -13,7 +14,7 @@ const authReducer = (state, action) => {
 const signup = dispatch => async ({email, password}) => {
   try {
     const response = await trackerAPI.post("/signup", {email, password});
-    console.log(response.data);
+    await AsyncStorage.setItem("token", response.data.token);
   } catch (e) {
     dispatch({type: "add_error", payload: "Something went wrong with sign up"});
   }
